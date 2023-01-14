@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body%}
+    {% if content != None %}
+        {{ content|safe }}
+        <a href='{{title}}/edit/' class="btn btn-primary" role="button"> Edit Page</a>
+
+    {% else %}
+        <h1 style="text-align: center">
+            Error (404): No such entry exists.
+        </h1>
+    {% endif %}
+{% endblock %}
